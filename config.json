@@ -1,0 +1,4 @@
+{
+    "BERT_MODEL": "dccuchile/bert-base-spanish-wwm-cased",
+    "MAX_SEQUENCE_LEN": 50
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>FAKE NEWS CLASSIFIER API V.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body class="mx-auto text-white bg-dark">
+    <main>
+      <div class="container d-flex w-100 h-100 p-5 mx-auto flex-column">
+        <div class="row">
+            <h1>Clasificador de Fake News</h1>
+            <form action="{{ url_for('predict')}}" method="post" class="form-control mt-4">
+                <div class="row">
+                    <div class="col">
+                        <label for="input_text" class="form-label">Titular de noticia</label>
+                        <input
+                        class="form-control"
+                        type="text"
+                        name="input_text"
+                        placeholder="Ingrese un texto de noticia"
+                        required="required"
+                      /><br />
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block btn-large">
+                            Predecir
+                          </button>
+                    </div>
+                </div>
+            </form>
+            <div class="col p-5">
+                <p class="fs-3">{{prediction}}</p>
+            </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+Flask
+transformers==3.0.0
+gunicorn
+joblib
+torch
+pandas
+numpy
+sklearn
+Jinja2
